@@ -38,22 +38,22 @@ export function AboutSection() {
               </div>
 
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed text-pretty">
-                Громадська організація, створена сім'єю, що щонеділі збирає учасниць для спільного розвитку, підтримки,
-                тренінгів і культурних подій. Кілька разів на рік ми запрошуємо зірок естради та шоу-бізнесу для
-                масштабних зустрічей.
+                  Громадська організація, створена талановитою ведучою, що щонеділі збирає учасниць
+                  для спільного розвитку, підтримки, тренінгів і культурних подій.
+                  Кілька разів на рік ми запрошуємо зірок естради та шоу-бізнесу для масштабних зустрічей.
               </p>
 
-              <div className="grid md:grid-cols-3 gap-6 pt-8">
+              <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center space-y-2">
                   <div className="text-4xl font-bold text-primary">100+</div>
                   <div className="text-sm text-muted-foreground">Учасниць</div>
                 </div>
                 <div className="text-center space-y-2">
-                  <div className="text-4xl font-bold text-primary">52</div>
-                  <div className="text-sm text-muted-foreground">Зустрічі на рік</div>
+                  <div className="text-4xl font-bold text-primary">50+</div>
+                  <div className="text-sm text-muted-foreground">Зустрічей на рік</div>
                 </div>
                 <div className="text-center space-y-2">
-                  <div className="text-4xl font-bold text-primary">10+</div>
+                  <div className="text-4xl font-bold text-primary">5+</div>
                   <div className="text-sm text-muted-foreground">Років досвіду</div>
                 </div>
               </div>
