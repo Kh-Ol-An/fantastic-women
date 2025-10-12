@@ -19,9 +19,10 @@ interface EventModalProps {
     event: Event | null
     isOpen: boolean
     onClose: () => void
+    scrollToContact: () => void
 }
 
-export function EventModal({ event, isOpen, onClose }: EventModalProps) {
+export function EventModal({ event, isOpen, onClose, scrollToContact }: EventModalProps) {
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
@@ -102,7 +103,7 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                     </div>
 
                     <div className="mt-8 flex gap-4">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90">
+                        <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={scrollToContact}>
                             Зареєструватися
                         </Button>
                         <Button size="lg" variant="outline" onClick={onClose}>

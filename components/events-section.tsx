@@ -85,6 +85,23 @@ export function EventsSection() {
         setTimeout(() => setSelectedEvent(null), 200)
     }
 
+    const scrollToContact = () => {
+        const element = document.getElementById('contact')
+        if (element) {
+            setIsModalOpen(false)
+            setTimeout(() => setSelectedEvent(null), 200)
+
+            const offset = 80
+            const elementPosition = element.getBoundingClientRect().top
+            const offsetPosition = elementPosition + window.pageYOffset - offset
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            })
+        }
+    }
+
     return (
         <>
             <section id="events" ref={sectionRef} className="py-24 md:py-32 bg-background">
@@ -131,7 +148,12 @@ export function EventsSection() {
                 </div>
             </section>
 
-            <EventModal event={selectedEvent} isOpen={isModalOpen} onClose={handleCloseModal} />
+            <EventModal
+                event={selectedEvent}
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                scrollToContact={scrollToContact}
+            />
         </>
     )
 }
