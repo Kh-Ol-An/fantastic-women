@@ -3,8 +3,8 @@ import { Resend } from 'resend';
 
 // 3. (ВАЖЛИВО) Видаліть "NEXT_PUBLIC_" з префіксів змінних середовища
 // Секретні ключі НІКОЛИ не повинні мати префікс NEXT_PUBLIC_
-const resend = new Resend(process.env.RESEND_API_KEY);
-const toEmail = process.env.CONTACT_FORM_EMAIL_TO;
+const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const toEmail = process.env.NEXT_PUBLIC_CONTACT_FORM_EMAIL_TO;
 
 // (Опціонально, але гарна практика) Створіть тип для даних відповіді
 type ResponseData = {
