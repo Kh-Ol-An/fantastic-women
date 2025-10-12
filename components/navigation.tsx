@@ -49,7 +49,7 @@ export function Navigation() {
                         {/* Logo */}
                         <button onClick={() => scrollToSection("hero")} className="flex items-center gap-3 group cursor-pointer">
                             <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-xl group-hover:shadow-primary/40 group-hover:scale-105 transition-all duration-300">
-                                <img src="/logo.png" alt="Логотип"/>
+                                <img src="/logo.jpeg" alt="Логотип"/>
                             </div>
                             <div className="hidden lg:block">
                                 <h1 className="text-xl font-bold leading-tight">
