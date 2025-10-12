@@ -17,7 +17,7 @@ const contactFormSchema = z.object({
 // Infer the type from the schema for TypeScript
 type ContactFormInputs = z.infer<typeof contactFormSchema>;
 
-export default function ContactForm() {
+export function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState('');
 
