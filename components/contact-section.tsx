@@ -141,10 +141,10 @@ export function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Email</div>
                       <a
-                        href="mailto:info@fantasticwomen.ua"
+                        href="mailto:fantasticwomen.ua@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        info@fantasticwomen.ua
+                          fantasticwomen.ua@gmail.com
                       </a>
                     </div>
                   </div>
@@ -156,10 +156,10 @@ export function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Телефон</div>
                       <a
-                        href="tel:+380123456789"
+                        href="tel:+380958320208"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +380 12 345 67 89
+                        +380 95 832 02 08
                       </a>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export function ContactSection() {
                 <h3 className="text-2xl font-semibold text-foreground mb-6">Соціальні мережі</h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/p/%D0%93%D0%9E-%D0%A4%D0%B0%D0%BD%D1%82%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D0%B6%D1%96%D0%BD%D0%BA%D0%B8-100072101002580/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
@@ -178,7 +178,7 @@ export function ContactSection() {
                     <Facebook className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/fantasticwomen.ua/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
