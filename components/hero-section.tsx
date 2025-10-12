@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Heart } from "lucide-react"
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -9,7 +8,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img src="/fantastic-women.jpg" alt="Фантастичні Жінки" className="w-full h-full object-cover" />
@@ -18,13 +17,15 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="inline-flex items-center gap-2 bg-card/90 backdrop-blur-sm px-6 py-3 rounded-full">
-            <Heart className="w-5 h-5 text-primary fill-primary" />
-            <span className="text-sm font-medium text-card-foreground">Громадська організація</span>
-          </div>
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="relative">
+              <div className="absolute -top-6 lg:top-1 right-6 md:right-20 lg:right-24 inline-flex items-center gap-2 bg-card/90 backdrop-blur-sm px-3 py-1 rounded-sm">
+                  <img className="w-4 h-4 text-primary fill-primary" src="/group.svg" alt="Іконка група жінок" />
+                  <span className="text-xs font-medium text-card-foreground">Громадська організація</span>
+              </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold text-white text-balance leading-tight">Фантастичні Жінки</h1>
+              <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white text-balance leading-tight">Фантастичні Жінки</h1>
+          </div>
 
           <p className="text-2xl md:text-3xl text-white/95 font-light text-balance">
             Психологічна підтримка та розвиток жінок
