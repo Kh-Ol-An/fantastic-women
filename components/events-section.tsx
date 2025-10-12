@@ -4,55 +4,9 @@ import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Calendar } from "lucide-react"
 import { EventModal } from "./event-modal"
+import {Event} from "@/types/event";
 
-const events = [
-    {
-        title: "Щотижнева зустріч",
-        date: "Кожної неділі",
-        time: "14:00 - 16:00",
-        location: "Київ, вул. Хрещатик 1",
-        participants: "15-20 учасниць",
-        image: "/women-gathering-workshop-creative-activities.jpg",
-        description: "Регулярні зустрічі для спілкування, підтримки та розвитку",
-        fullDescription:
-            "Наші щотижневі зустрічі - це безпечний простір для жінок, де можна поділитися своїми думками, отримати підтримку та знайти нових подруг.\n\nНа зустрічах ми обговорюємо різні теми: від особистого розвитку до професійних викликів. Кожна зустріч включає час для вільного спілкування, тематичні дискусії та практичні вправи.\n\nПриєднуйтесь до нашої спільноти та відчуйте силу жіночої підтримки!",
-    },
-    {
-        title: "Майстер-клас з арт-терапії",
-        date: "15 Березня 2024",
-        time: "18:00 - 20:30",
-        location: "Арт-студія 'Палітра'",
-        participants: "До 12 учасниць",
-        image: "/art-therapy-workshop-women-painting.jpg",
-        description: "Творчий підхід до психологічного здоров'я",
-        fullDescription:
-            "Арт-терапія - це потужний інструмент для самопізнання та емоційного відновлення. На цьому майстер-класі ви навчитеся використовувати творчість для роботи з емоціями та стресом.\n\nПрограма включає:\n• Вступ до арт-терапії\n• Практичні вправи з малювання\n• Групову роботу та обмін досвідом\n• Чаювання та спілкування\n\nВсі матеріали надаються. Попередній досвід малювання не потрібен!",
-    },
-    {
-        title: "Зустріч зі зіркою",
-        date: "22 Квітня 2024",
-        time: "19:00 - 21:00",
-        location: "Конференц-зал 'Горизонт'",
-        participants: "До 50 учасниць",
-        image: "/celebrity-event-stage-performance-audience.jpg",
-        description: "Спеціальна подія з відомою особистістю",
-        fullDescription:
-            "Запрошуємо вас на особливу зустріч з успішною українською жінкою, яка поділиться своєю історією успіху, викликами та досягненнями.\n\nВи дізнаєтесь:\n• Як долати перешкоди на шляху до мети\n• Секрети балансу між кар'єрою та особистим життям\n• Поради щодо особистого розвитку\n\nПісля виступу буде сесія запитань-відповідей та можливість особистого спілкування. Не пропустіть цю натхненну подію!",
-    },
-    {
-        title: "Літній ретрит",
-        date: "15-17 Червня 2024",
-        time: "П'ятниця 18:00 - Неділя 16:00",
-        location: "Карпати, еко-садиба 'Гармонія'",
-        participants: "20 учасниць",
-        image: "/women-retreat-nature-meditation-wellness.jpg",
-        description: "Відпочинок та відновлення на природі",
-        fullDescription:
-            "Триденний ретрит для жінок, які прагнуть відновити внутрішню гармонію та енергію серед мальовничої природи Карпат.\n\nПрограма ретриту:\n• Ранкові медитації та йога\n• Майстер-класи з mindfulness\n• Творчі майстерні\n• Прогулянки на природі\n• Групові терапевтичні сесії\n• Здорове харчування\n• Вільний час для відпочинку\n\nПроживання в комфортних номерах, триразове харчування включено. Кількість місць обмежена - реєструйтесь заздалегідь!",
-    },
-]
-
-export function EventsSection() {
+export function EventsSection({ events }: { events: Event[] }) {
     const [isVisible, setIsVisible] = useState(false)
     const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -119,7 +73,7 @@ export function EventsSection() {
                         <div className="flex flex-col gap-8">
                             {events.map((event, index) => (
                                 <Card
-                                    key={index}
+                                    key={event._id}
                                     onClick={() => handleEventClick(event)}
                                     className={`overflow-hidden bg-card border-border/50 hover:shadow-xl transition-all duration-500 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                                     style={{ transitionDelay: `${index * 100}ms` }}

@@ -1,22 +1,31 @@
-"use client"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { ActivitiesSection } from "@/components/activities-section"
 import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
+import { client } from "@/sanity/lib/client"
+import { eventsQuery } from "@/sanity/lib/queries"
+import { Event } from "@/types/event"
 
-export default function Home() {
-  return (
-    <>
-      <Navigation />
-      <main className="min-h-screen">
-        <HeroSection />
-        <AboutSection />
-        <ActivitiesSection />
-        <EventsSection />
-        <ContactSection />
-      </main>
-    </>
-  )
+async function getPageData(): Promise<{ events: Event[] }> {
+    const data = await client.fetch<{ events: Event[] }>(eventsQuery)
+    return data || { events: [] } // Повертаємо порожній масив, якщо data = null
+}
+
+export default async function Home() {
+    const { events } = await getPageData()
+
+    return (
+        <>
+            <Navigation />
+            <main className="min-h-screen">
+                <HeroSection />
+                <AboutSection />
+                <ActivitiesSection />
+                <EventsSection events={events} />
+                <ContactSection />
+            </main>
+        </>
+    )
 }
