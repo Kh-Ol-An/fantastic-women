@@ -43,16 +43,16 @@ export function AboutSection() {
                   Кілька разів на рік ми запрошуємо зірок естради та шоу-бізнесу для масштабних зустрічей.
               </p>
 
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                <div className="text-center space-y-2">
+              <div className="grid sm:grid-cols-3 gap-6 pt-8">
+                <div className="sm:text-center space-y-2">
                   <div className="text-4xl font-bold text-primary">100+</div>
                   <div className="text-sm text-muted-foreground">Учасниць</div>
                 </div>
-                <div className="text-center space-y-2">
+                <div className="sm:text-center space-y-2">
                   <div className="text-4xl font-bold text-primary">50+</div>
                   <div className="text-sm text-muted-foreground">Зустрічей на рік</div>
                 </div>
-                <div className="text-center space-y-2">
+                <div className="sm:text-center space-y-2">
                   <div className="text-4xl font-bold text-primary">5+</div>
                   <div className="text-sm text-muted-foreground">Років досвіду</div>
                 </div>
