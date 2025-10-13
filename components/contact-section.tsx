@@ -190,10 +190,10 @@ export function ContactSection() {
                                             <Mail className="w-5 h-5 text-primary"/>
                                         </div>
                                         <div>
-                                            <div className="font-medium text-foreground">Email</div>
+                                            <div className="font-medium text-foreground text-sm sm:text-base">Email</div>
                                             <a
                                                 href="mailto:fantasticwomen.ua@gmail.com"
-                                                className="text-muted-foreground hover:text-primary transition-colors"
+                                                className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-base"
                                             >
                                                 fantasticwomen.ua@gmail.com
                                             </a>
@@ -206,10 +206,10 @@ export function ContactSection() {
                                             <Phone className="w-5 h-5 text-primary"/>
                                         </div>
                                         <div>
-                                            <div className="font-medium text-foreground">Телефон</div>
+                                            <div className="font-medium text-foreground text-sm sm:text-base">Телефон</div>
                                             <a
                                                 href="tel:+380958320208"
-                                                className="text-muted-foreground hover:text-primary transition-colors"
+                                                className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-base"
                                             >
                                                 +380 95 832 02 08
                                             </a>
