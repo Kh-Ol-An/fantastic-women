@@ -102,11 +102,20 @@ export function EventModal({ event, isOpen, onClose, scrollToContact }: EventMod
                         )}
                     </div>
 
-                    <div className="mt-8 flex gap-4">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={scrollToContact}>
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                        <Button
+                            size="lg"
+                            className="w-full bg-primary hover:bg-primary/90 sm:w-auto"
+                            onClick={scrollToContact}
+                        >
                             Зареєструватися
                         </Button>
-                        <Button size="lg" variant="outline" onClick={onClose}>
+                        <Button
+                            size="lg"
+                            variant="outline"
+                            className="w-full sm:w-auto"
+                            onClick={onClose}
+                        >
                             Закрити
                         </Button>
                     </div>
