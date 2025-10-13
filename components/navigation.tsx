@@ -49,7 +49,7 @@ export function Navigation() {
                         {/* Logo */}
                         <button onClick={() => scrollToSection("hero")} className="flex items-center gap-3 group cursor-pointer">
                             <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-xl group-hover:shadow-primary/40 group-hover:scale-105 transition-all duration-300">
-                                <img src="/logo.jpeg" alt="Логотип"/>
+                                <img src="/logo.jpg" alt="Логотип"/>
                             </div>
                             <div className="hidden lg:block">
                                 <h1 className="text-xl font-bold leading-tight">
@@ -122,7 +122,7 @@ export function Navigation() {
                         <div className="mt-auto pt-8 border-t border-primary/10">
                             <div className="flex items-center justify-center gap-3">
                                 <div className="relative w-16 h-16 rounded-full overflow-hidden flex items-center justify-center shadow-xl shadow-primary/30">
-                                    <img src="/logo.jpeg" alt="Логотип Фантастичні Жінки" className="w-full h-full object-cover" />
+                                    <img src="/logo.jpg" alt="Логотип Фантастичні Жінки" className="w-full h-full object-cover" />
                                 </div>
                                 <div>
                                     <p className="text-xl font-bold leading-tight whitespace-nowrap">
