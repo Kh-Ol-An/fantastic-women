@@ -121,8 +121,8 @@ export function Navigation() {
                         {/* Decorative Element */}
                         <div className="mt-auto pt-8 border-t border-primary/10">
                             <div className="flex items-center justify-center gap-3">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary via-accent to-secondary flex items-center justify-center shadow-xl shadow-primary/30">
-                                    <span className="text-white font-bold text-2xl">ФЖ</span>
+                                <div className="relative w-16 h-16 rounded-full overflow-hidden flex items-center justify-center shadow-xl shadow-primary/30">
+                                    <img src="/logo.jpeg" alt="Логотип Фантастичні Жінки" className="w-full h-full object-cover" />
                                 </div>
                                 <div>
                                     <p className="text-lg font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
