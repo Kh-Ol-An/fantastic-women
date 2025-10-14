@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/about-section"
 import { ActivitiesSection } from "@/components/activities-section"
 import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
 import { client } from "@/sanity/lib/client"
 import { eventsQuery } from "@/sanity/lib/queries"
 import { Event } from "@/types/event"
@@ -26,6 +27,7 @@ export default async function Home() {
                 <EventsSection events={events} />
                 <ContactSection />
             </main>
+            <Footer />
         </>
     )
 }
