@@ -10,7 +10,11 @@ import { eventsQuery } from "@/sanity/lib/queries"
 import { Event } from "@/types/event"
 
 async function getPageData(): Promise<{ events: Event[] }> {
-    const data = await client.fetch<{ events: Event[] }>(eventsQuery)
+    const data = await client.fetch<{ events: Event[] }>(
+        eventsQuery,
+        {},
+        { cache: 'no-store' }
+    )
     return data || { events: [] } // Повертаємо порожній масив, якщо data = null
 }
 
