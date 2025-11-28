@@ -1,3 +1,5 @@
+'use client'
+
 import {defineField, defineType} from 'sanity'
 import { Heart } from "lucide-react"
 
