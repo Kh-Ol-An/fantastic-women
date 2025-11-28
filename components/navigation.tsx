@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -43,7 +44,7 @@ export function Navigation() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg shadow-black/5">
+            <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5 transition-colors dark:border-border/40 dark:shadow-black/30">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
@@ -59,27 +60,32 @@ export function Navigation() {
                         </button>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center gap-8">
+                        <div className="hidden md:flex items-center gap-6">
                             {navLinks.map((link) => (
                                 <button
                                     key={link.id}
                                     onClick={() => scrollToSection(link.id)}
-                                    className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors relative group px-2 py-1"
+                                    className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors relative group px-2 py-1"
                                 >
                                     {link.label}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
                                 </button>
                             ))}
+                            <ThemeToggle className="hidden md:inline-flex hover:bg-accent/60" />
                         </div>
 
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            className="md:hidden hover:bg-primary/10 text-gray-700 relative z-[60]"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                        </Button>
+                        <div className="flex items-center gap-2 md:hidden">
+                            <ThemeToggle size="icon" className="hover:bg-accent/60" />
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="hover:bg-accent/60 text-foreground relative z-[60]"
+                                aria-label={isMobileMenuOpen ? "Закрити меню" : "Відкрити меню"}
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            >
+                                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -94,18 +100,23 @@ export function Navigation() {
 
                 {/* Menu Panel */}
                 <div
-                    className={`absolute top-20 left-0 right-0 bottom-0 bg-gradient-to-br from-white/90 to-accent/10 backdrop-blur-2xl transition-transform duration-300 ${
+                    className={`absolute top-20 left-0 right-0 bottom-0 bg-gradient-to-br from-background/95 via-background/90 to-accent/20 backdrop-blur-2xl transition-transform duration-300 ${
                         isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
                     }`}
                 >
-                    <div className="container mx-auto px-4 py-6 sm:px-6 sm:py-12 h-full flex flex-col">
+                    <div className="container mx-auto px-4 py-6 sm:px-6 sm:py-12 h-full flex flex-col gap-6">
+                        <div className="flex items-center justify-between rounded-2xl border border-border/60 bg-background/80 px-6 py-4 shadow-sm shadow-black/10">
+                            <span className="text-sm font-semibold text-muted-foreground">Тема сайту</span>
+                            <ThemeToggle size="icon" className="hover:bg-accent/60" />
+                        </div>
+
                         {/* Navigation Links */}
                         <div className="flex flex-col gap-2 flex-1">
                             {navLinks.map((link, index) => (
                                 <button
                                     key={link.id}
                                     onClick={() => scrollToSection(link.id)}
-                                    className={`text-left text-2xl font-bold text-gray-800 hover:text-primary hover:bg-white/50 transition-all py-3 sm:py-4 px-6 rounded-2xl backdrop-blur-sm border border-transparent hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10 transform hover:translate-x-2 ${
+                                    className={`text-left text-2xl font-bold text-foreground hover:text-primary hover:bg-accent/60 transition-all py-3 sm:py-4 px-6 rounded-2xl backdrop-blur-sm border border-transparent hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10 transform hover:translate-x-2 ${
                                         isMobileMenuOpen ? "animate-in slide-in-from-left" : ""
                                     }`}
                                     style={{
@@ -128,7 +139,7 @@ export function Navigation() {
                                     <p className="text-xl font-bold leading-tight whitespace-nowrap">
                                         Фантастичні Жінки
                                     </p>
-                                    <p className="text-sm text-gray-600">Разом ми сильніші</p>
+                                    <p className="text-sm text-muted-foreground">Разом ми сильніші</p>
                                 </div>
                             </div>
                         </div>
