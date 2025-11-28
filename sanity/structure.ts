@@ -5,5 +5,15 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title('Content')
     .items([
-      S.documentTypeListItem('pageSettings').title('Налаштування сторінки'),
+      S.listItem()
+        .title('Налаштування сторінки')
+        .id('pageSettings')
+        .child(
+          S.document()
+            .schemaType('pageSettings')
+            .documentId('pageSettings')
+            .title('Налаштування сторінки'),
+        ),
+      S.divider(),
+      S.documentTypeListItem('event').title('Події'),
     ])
