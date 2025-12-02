@@ -1,13 +1,9 @@
-'use client'
-
 import {defineField, defineType} from 'sanity'
-import { Heart } from "lucide-react"
 
 export const pageSettings = defineType({
     name: 'pageSettings',
     title: 'Налаштування сторінки',
     type: 'document',
-    icon: Heart,
     fields: [
         defineField({
             name: 'publishedEvents',
